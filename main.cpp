@@ -7,12 +7,17 @@ void selection_sort(double * array , unsigned int size)
 {
 	for (unsigned int i = 0; i < size; i++)
 	{
+		unsigned int min=i;
 		for (unsigned int j = i + 1; j < size; j++)
 		{
-			if (array[i] > array[j])
+			if (array[min] > array[j])
 			{
-				swap(array[i], array[j]);
+				min=j ;
 			}
+		}
+		if (array[i] > array[min])
+		{
+			swap(array[i], array[min]); //cout << "swap ";
 		}
 	}
 }
@@ -29,7 +34,7 @@ bool read(double * array, unsigned int size)
 			array_count++;
 		}
 	}
-	if (array_count ==size && !(stream >>array[0])) return true;
+	if (array_count ==size && stream.eof()) return true;
 	else return false;
 }
 void print(double * array, unsigned int size)
@@ -57,5 +62,6 @@ int main()
 		cout << "fail input ";
 		cin.get();
 	}
+	delete [] array;
     return 0;
 }

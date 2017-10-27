@@ -29,7 +29,7 @@ bool read(double * array, unsigned int size)
 			array_count++;
 		}
 	}
-	if (array_count ==size) return true;
+	if (array_count ==size && !(stream >>array[0])) return true;
 	else return false;
 }
 void print(double * array, unsigned int size)

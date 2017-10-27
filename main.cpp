@@ -1,4 +1,3 @@
-
 #include "stdafx.h"
 #include < iostream>
 #include <utility>
@@ -20,17 +19,17 @@ void selection_sort(double * array , unsigned int size)
 bool read(double * array, unsigned int size)
 {
 	string mas;
-	unsigned int i = 0 , k=0;
+	unsigned int i = 0 , array_count=0;
 	getline(cin, mas);
 	istringstream stream(mas);
 	for (i; i < size; i++)
 	{
 		if (stream >> array[i])
 		{
-			k++;
+			array_count++;
 		}
 	}
-	if (k==size) return true;
+	if (array_count ==size) return true;
 	else return false;
 }
 void print(double * array, unsigned int size)

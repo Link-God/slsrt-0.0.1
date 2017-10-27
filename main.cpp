@@ -57,6 +57,5 @@ int main()
 		cout << "fail input ";
 		cin.get();
 	}
-	delete array;
     return 0;
 }
